@@ -1,0 +1,10 @@
+﻿
+@model IEnumerable<NWindMVC.Models.Customer>
+
+@using (Html.BeginForm("Customerinfo", "Customer", FormMethod.Post))
+{
+    <h2>SELECT THE ID YOU WANT TO KNOW THE INFO OF :</h2>
+    @Html.DropDownListFor(model => model.First().CustomerId, new SelectList(Model, "CustomerId", "CustomerId"))
+    <input type="submit" value="Show Details" />
+
+}

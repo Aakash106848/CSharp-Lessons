@@ -1,0 +1,22 @@
+﻿@model NWindMVC.Models.OrderIdsViewModel
+
+
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+
+<h1>Index</h1>
+<div>
+	<h1>OrderIds</h1>
+	<hr />
+	<form asp-controller="Order" method="post" asp-action="Details">
+		<select asp-for="Id" asp-items="Model.OrderIdSelectedList"></select>
+		<button type="submit"> Details </button>
+	</form>
+
+
+
+</div>

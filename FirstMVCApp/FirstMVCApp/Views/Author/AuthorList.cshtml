@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FirstMVCApp.Models.Author>
+
+@{
+    ViewData["Title"] = "AuthorList";
+}
+
+<h1>AuthorList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Authorid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfBooks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Royality)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authorid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfBooks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Royality)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Authorid  }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Authorid  }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Authorid  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
